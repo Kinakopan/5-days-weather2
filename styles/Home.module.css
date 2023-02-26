@@ -21,18 +21,21 @@
   position: relative;
   padding: 3rem;
   font-family: "Gill Sans", sans-serif;
+  background: rgb(152,92,55);
+  background: linear-gradient(90deg, rgba(152,92,55,1) 0%, rgba(199,145,105,1) 50%, rgba(152,92,55,1) 100%);
+  z-index: 0;
 }
 
 .bgImg {
   position: absolute;
   top: 0;
   right: 0;
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
-  background-position: center bottom;
+  background-position: center top;
 }
 
 .main {
@@ -73,7 +76,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .item {
