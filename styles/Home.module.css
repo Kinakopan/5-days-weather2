@@ -26,14 +26,13 @@
 .bgImg {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: auto;
   height: 100%;
-  /* padding-top: 60%; */
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
-  background-position: right bottom;
+  background-position: center bottom;
 }
 
 .main {
@@ -88,10 +87,6 @@
   height: auto;
 }
 
-.box_icon {
-
-}
-
 .item_img {
   filter: drop-shadow(2px 2px 0px #686868);
 }
@@ -111,4 +106,20 @@
   filter: drop-shadow(1px 1px 0px #fff);
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.bounce {
+  animation: bounce 0.5s ease-in-out infinite;
+  animation-duration: 3s;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

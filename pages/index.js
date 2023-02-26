@@ -16,6 +16,11 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [currentImage]);
 
+  const imageStyle = {
+    opacity: 1,
+    transition: "opacity 1s ease-in-out",
+  };
+
   const apiKey = process.env.API_KEY;
   const location = "vancouver";
   const units = "metric";
@@ -96,7 +101,7 @@ export default function Home() {
             <div
               key={index}
               className={styles.item}>
-              <div className={styles.item_box_icon}>
+              <div className={`${styles.item_box_icon} ${styles.bounce}`}>
                 <Image
                   src={icon}
                   alt={icon}
@@ -149,10 +154,15 @@ export default function Home() {
       </Head>
 
       <div className={styles.wrapper}>
-        <div
-          className={styles.bgImg}
-          style={{backgroundImage: `url(${images[currentImage]})`}}>
-        </div>
+        {images.map((image, index) => (
+          <img
+            className={styles.bgImg}
+            key={index}
+            src={image}
+            alt=""
+            style={{ ...imageStyle, opacity: index === currentImage ? 1 : 0 }}>
+          </img>
+        ))}
 
         <main className={styles.main}>
 
